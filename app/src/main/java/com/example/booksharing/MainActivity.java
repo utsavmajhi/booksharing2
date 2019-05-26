@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         //if verification part
         String n1=name.getText().toString();
         String p1=password.getText().toString();
+        if(n1.isEmpty()||p1.isEmpty())
+        {
+            Toast.makeText(MainActivity.this,"Please fill all credentials",Toast.LENGTH_SHORT).show();
+        }
         progress.setMessage("Please Wait!");
         progress.show();
         fblauth.signInWithEmailAndPassword(n1,p1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
